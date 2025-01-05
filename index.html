@@ -1,0 +1,321 @@
+<div class="formbold-main-wrapper">
+  
+  <div class="formbold-form-wrapper">
+    
+    <defs>
+    <clipPath id="clip0_1725_3865">
+    <rect width="490" height="207" fill="white"/>
+    </clipPath>
+    </defs>
+    </svg>
+
+    <form action="https://thefinalsurge.framer.website/thank-you" method="POST" name="contact-form" class="formbox">
+      <div class="formbold-input-group">
+        <label for="name" class="formbold-form-label" > Name </label>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          
+          placeholder="Enter your name"
+          class="formbold-form-input"
+          required
+        />
+      </div>
+
+      <div class="formbold-input-group">
+        <label for="email" class="formbold-form-label"> Email </label>
+        <input
+          type="email"
+          name="lastname"
+          id="email"
+          placeholder="Enter your email"
+          class="formbold-form-input"
+          required
+        />
+      </div>
+
+      <div class="formbold-input-group">
+        <label for="phoneno" class="formbold-form-label"> Phone Number </label>
+        <input
+          type="text"
+          name="phoneno"
+          id="phoneno"
+          placeholder="Enter your phone number"
+          class="formbold-form-input"
+          required
+        />
+      </div>
+
+      <div class="formbold-input-group">
+        <label class="formbold-form-label">
+          Gender
+        </label>
+
+        <select class="formbold-form-select" name="gender" id="gender">
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <div class="formbold-input-group">
+        <label for="age" class="formbold-form-label"> Age </label>
+        <input
+          type="text"
+          name="age"
+          id="age"
+          placeholder="Enter your age"
+          class="formbold-form-input"
+        
+        />
+      </div>
+
+      <div>
+        <label for="address" class="formbold-form-label">
+         Address
+        </label>
+        <textarea
+          rows="2"
+          name="address"
+          id="address"
+          placeholder="Let us know your country of residence!"
+          class="formbold-form-input"
+          required
+        ></textarea>
+      </div>
+
+
+      <div>
+        <label for="challenge" class="formbold-form-label">
+         What's your challenge
+        </label>
+        <textarea
+          rows="6"
+          name="challenge"
+          id="challenge"
+          placeholder="What's in your mind to complete along with us"
+          class="formbold-form-input"
+          required
+        ></textarea>
+      </div>
+
+      
+
+      <div class="formbold-input-group">
+        <label for="days" class="formbold-form-label"> Duration of the challenge </label>
+        <input
+          type="number"
+          name="days"
+          id="days"
+          placeholder="Select days"
+          class="formbold-form-input"
+          required
+        />
+      </div>
+
+      <div>
+        <label for="reason" class="formbold-form-label">
+         Why did you choose this challenge?
+        </label>
+        <textarea
+          rows="4"
+          name="reason"
+          id="reason"
+          placeholder="We would love to hear more about you..."
+          class="formbold-form-input"
+        ></textarea>
+      </div>
+
+      
+
+      
+
+      
+
+      <button class="formbold-btn">Submit</button>
+    </form>
+  </div>
+</div>
+
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbxDL6maKKrAnuTdsK38oF1ccYVDM9HxQUBk0I-5kNqMUQThlpcV-R-vht-82uh_H2CSWA/exec';
+  
+  const form = document.forms['contact-form'];
+  
+  form.addEventListener('submit', e => {
+      e.preventDefault(); // Prevent default form submission behavior
+      
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => {
+          alert("Thank you! Form is submitted");
+          // Redirect to discord
+          window.location.href = 'https://discord.gg/xpfkuU6qUT'; 
+      })
+      .catch(error => console.error('Error!', error.message));
+  });
+  </script>
+  
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+  * {
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box; */
+  }
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: #272625;
+  }
+  
+
+/* .formbox{
+  border-radius: 25px;
+  border: 2px solid #000;
+  padding: 20px;
+  
+} */
+
+  .formbold-main-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 48px;
+  }
+
+  .formbold-form-wrapper {
+    margin: 0 auto;
+    max-width: 570px;
+    width: 100%;
+    /* background: ; */
+    padding: 40px;
+  }
+
+  .formbold-form-img {
+    margin-bottom: 45px;
+  }
+
+  .formbold-input-group {
+    margin-bottom: 18px;
+    color: white;
+  }
+
+  .formbold-form-select {
+    width: 100%;
+    padding: 12px 22px;
+    border-radius: 5px;
+    border: 1px solid #dde3ec;
+    background: #ffffff;
+    font-size: 16px;
+    color: #536387;
+    outline: none;
+    resize: none;
+  }
+
+  .formbold-input-radio-wrapper {
+    margin-bottom: 25px;
+  }
+  .formbold-radio-flex {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .formbold-radio-label {
+    font-size: 14px;
+    line-height: 24px;
+    color: black;
+    position: relative;
+    padding-left: 25px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  .formbold-input-radio {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+  .formbold-radio-checkmark {
+    position: absolute;
+    top: -1px;
+    left: 0;
+    height: 18px;
+    width: 18px;
+    background-color: #ffffff;
+    border: 1px solid #dde3ec;
+    border-radius: 50%;
+  }
+  .formbold-radio-label
+    .formbold-input-radio:checked
+    ~ .formbold-radio-checkmark {
+    background-color: #6a64f1;
+  }
+  .formbold-radio-checkmark:after {
+    content: '';
+    position: absolute;
+    display: none;
+  }
+
+  .formbold-radio-label
+    .formbold-input-radio:checked
+    ~ .formbold-radio-checkmark:after {
+    display: block;
+  }
+
+  .formbold-radio-label .formbold-radio-checkmark:after {
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ffffff;
+    transform: translate(-50%, -50%);
+  }
+
+  .formbold-form-input {
+    width: 100%;
+    padding: 13px 22px;
+    border-radius: 5px;
+    border: 1px solid #dde3ec;
+    background: #ffffff;
+    font-weight: 500;
+    font-size: 16px;
+    color: black;
+    outline: none;
+    resize: none;
+  }
+  .formbold-form-input::placeholder {
+    color: #536387;
+  }
+  .formbold-form-input:focus {
+    border-color: black;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+  }
+  .formbold-form-label {
+    color: white;
+    font-size: 14px;
+    line-height: 24px;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .formbold-btn {
+    text-align: center;
+    width: 100%;
+    font-size: 16px;
+    border-radius: 5px;
+    padding: 14px 25px;
+    border: none;
+    font-weight: 500;
+    background-color: #6a64f1;
+    color: white;
+    cursor: pointer;
+    margin-top: 25px;
+  }
+  .formbold-btn:hover {
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+  }
+</style>
